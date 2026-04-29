@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  /* Color tokens */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F7F5;
+  --bg-tertiary: #EFEEEB;
+  --border-default: #E4E3DF;
+  --border-strong: #C9C8C4;
+  --text-primary: #1A1A18;
+  --text-secondary: #5C5B57;
+  --text-muted: #9C9B96;
+  --text-placeholder: #B8B7B2;
+  --accent-primary: #2563EB;
+  --accent-hover: #1D4ED8;
+  --accent-surface: #EFF6FF;
+  --consensus-strong: #16A34A;
+  --consensus-strong-surface: #F0FDF4;
+  --consensus-mixed: #D97706;
+  --consensus-mixed-surface: #FFFBEB;
+  --consensus-conflict: #DC2626;
+  --consensus-conflict-surface: #FEF2F2;
+  --moscow-must: #16A34A;
+  --moscow-should: #2563EB;
+  --moscow-could: #D97706;
+  --moscow-wont: #9C9B96;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ─── Shake animation ─── */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+
+/* ─── Print styles ─── */
+@media print {
+  /* Hide interactive chrome */
+  .report-actions,
+  nav,
+  [data-sidebar],
+  [data-tabbar] {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+  }
+
+  .report-content {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  h3 {
+    page-break-after: avoid;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+  * {
+    box-shadow: none !important;
+  }
+}
